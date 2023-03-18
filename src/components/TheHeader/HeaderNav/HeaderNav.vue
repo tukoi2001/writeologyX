@@ -17,14 +17,17 @@
           >
         </li>
       </ul>
-      <v-icon v-if="route.children" class="header__nav-icon" size="20"
-        >mdi-chevron-down</v-icon
-      >
+      <font-icon
+        v-if="route.children"
+        class="header__nav-icon"
+        name="mdi-chevron-down"
+      />
     </li>
   </ul>
 </template>
 
 <script lang="ts">
+import FontIcon from '@/components/FontIcon/FontIcon.vue';
 import { computed, defineComponent } from 'vue';
 
 type RouterItem = {
@@ -35,6 +38,7 @@ type RouterItem = {
 };
 
 export default defineComponent({
+  components: { FontIcon },
   name: 'HeaderNav',
   setup() {
     const routerList = computed<RouterItem[]>(() => [

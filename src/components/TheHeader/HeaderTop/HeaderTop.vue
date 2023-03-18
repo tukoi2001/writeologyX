@@ -7,8 +7,9 @@
         class="header__top-icon"
         :href="icon.target"
         target="_blank"
-        ><v-icon size="20">{{ icon.icon }}</v-icon></a
       >
+        <font-icon :name="icon.icon" />
+      </a>
     </div>
     <div class="header__top-logo">
       <a href=""><img :src="IMG_URL" /></a>
@@ -16,17 +17,15 @@
     <div class="header__top-setting">
       <div class="header__top-cart">Cart {{ `(${totalItemCarts})` }}</div>
       <div class="header__top-account">
-        <v-icon size="24">mdi-account-outline</v-icon>
-        <v-icon class="header__top-account-down" size="20"
-          >mdi-chevron-down</v-icon
-        >
+        <font-icon size="24" name="mdi-account-outline" />
+        <font-icon class="header__top-account-down" name="mdi-chevron-down" />
         <div class="header__top-account-list">
           <div class="header__top-account-item">Login</div>
           <div class="header__top-account-item">Account</div>
         </div>
       </div>
       <div class="header__top-search">
-        <v-icon size="24">mdi-magnify</v-icon>
+        <font-icon size="24" name="mdi-magnify" />
       </div>
     </div>
   </div>
@@ -35,6 +34,7 @@
 <script lang="ts">
 import { computed, defineComponent, ref } from 'vue';
 import { IMG_URL } from '@/configs/constants';
+import FontIcon from '@/components/FontIcon/FontIcon.vue';
 
 type IconSocial = {
   id: string;
@@ -44,7 +44,7 @@ type IconSocial = {
 
 export default defineComponent({
   name: 'HeaderTop',
-  components: {},
+  components: { FontIcon },
   setup() {
     const totalItemCarts = ref<number>(0);
     const icons = computed<IconSocial[]>(() => [
