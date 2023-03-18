@@ -150,6 +150,7 @@ export default defineComponent({
       box-shadow: 0 2px 12px 0 rgb(0 0 0 / 12%);
       opacity: 0;
       visibility: hidden;
+      z-index: 99;
 
       &-link {
         @include text-style(16px, 400, 20px, $secondary);
