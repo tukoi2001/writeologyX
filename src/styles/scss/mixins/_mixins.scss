@@ -20,8 +20,17 @@
   text-transform: uppercase;
 }
 
+@mixin sub-title-text() {
+  @include text-style(16px, 400, 28px, $secondary);
+}
+
 @mixin flex-box($justify-content: flex-start, $align-items: center) {
   display: flex;
   justify-content: $justify-content;
   align-items: $align-items;
+}
+
+@mixin icon-color() {
+  color: $primary;
+  text-decoration: none;
 }
