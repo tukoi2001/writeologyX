@@ -1,10 +1,12 @@
 <template>
   <div class="master-layout">
-    <TheHeader />
-    <v-container>
-      <slot name="default" />
-    </v-container>
-    <TheFooter />
+    <perfect-scrollbar>
+      <TheHeader />
+      <v-container>
+        <slot name="default" />
+      </v-container>
+      <TheFooter />
+    </perfect-scrollbar>
   </div>
 </template>
 
