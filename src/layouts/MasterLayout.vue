@@ -2,9 +2,7 @@
   <div class="master-layout">
     <perfect-scrollbar>
       <TheHeader />
-      <v-container>
-        <slot name="default" />
-      </v-container>
+      <slot name="default" />
       <TheFooter />
     </perfect-scrollbar>
   </div>

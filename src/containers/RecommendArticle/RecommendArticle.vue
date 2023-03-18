@@ -1,26 +1,28 @@
 <template>
   <div class="recommend-article">
-    <v-row align="center">
-      <v-col cols="8">
-        <RecommendArticleImage />
-      </v-col>
-      <v-col cols="4">
-        <div class="recommend-article__relation">
-          <div
-            v-for="article in articles"
-            :key="article.id"
-            class="recommend-article__relation-item"
-          >
-            <div class="recommend-article__relation-category">
-              {{ article.category }}
-            </div>
-            <div class="recommend-article__relation-title">
-              {{ article.title }}
+    <v-container>
+      <v-row align="center">
+        <v-col cols="8">
+          <RecommendArticleImage />
+        </v-col>
+        <v-col cols="4">
+          <div class="recommend-article__relation">
+            <div
+              v-for="article in articles"
+              :key="article.id"
+              class="recommend-article__relation-item"
+            >
+              <div class="recommend-article__relation-category">
+                {{ article.category }}
+              </div>
+              <div class="recommend-article__relation-title">
+                {{ article.title }}
+              </div>
             </div>
           </div>
-        </div>
-      </v-col>
-    </v-row>
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
