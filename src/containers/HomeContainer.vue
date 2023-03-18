@@ -1,14 +1,14 @@
 <template>
-  <HomeContainer />
+  <MasterLayout> Hello </MasterLayout>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HomeContainer from '@/containers/HomeContainer.vue';
+import MasterLayout from '@/layouts/MasterLayout.vue';
 
 export default defineComponent({
-  name: 'HomeView',
-  components: { HomeContainer },
+  name: 'HomeContainer',
+  components: { MasterLayout },
   setup() {},
 });
 </script>

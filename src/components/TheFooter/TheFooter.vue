@@ -1,19 +1,20 @@
 <template>
-  <router-view />
+  <v-container>
+    <div class="footer">Footer</div>
+  </v-container>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'App',
+  name: 'TheFooter',
   setup() {},
 });
 </script>
 
-<style lang="scss">
-@import './styles/scss/reset.scss';
-* {
-  font-family: 'Manrope', sans-serif;
+<style lang="scss" scoped>
+.footer {
+  @include flex-box();
 }
 </style>
