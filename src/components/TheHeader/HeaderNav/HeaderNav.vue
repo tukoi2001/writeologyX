@@ -17,8 +17,11 @@
           >
         </li>
       </ul>
+      <div v-if="route.isHasComponent" class="header__nav-dropdown">
+        <HeaderNavChild />
+      </div>
       <font-icon
-        v-if="route.children"
+        v-if="route.children || route.isHasComponent"
         class="header__nav-icon"
         name="mdi-chevron-down"
       />
@@ -27,18 +30,19 @@
 </template>
 
 <script lang="ts">
-import FontIcon from '@/components/FontIcon/FontIcon.vue';
 import { computed, defineComponent } from 'vue';
+import HeaderNavChild from './HeaderNavChild.vue';
 
 type RouterItem = {
   id: string;
   title: string;
   to: string;
   children?: RouterItem[];
+  isHasComponent?: boolean;
 };
 
 export default defineComponent({
-  components: { FontIcon },
+  components: { HeaderNavChild },
   name: 'HeaderNav',
   setup() {
     const routerList = computed<RouterItem[]>(() => [
@@ -51,7 +55,7 @@ export default defineComponent({
         id: '2',
         title: 'Pages',
         to: 'home', // TODO: change when has route
-        children: [],
+        isHasComponent: true,
       },
       {
         id: '3',
