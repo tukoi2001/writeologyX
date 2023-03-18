@@ -71,20 +71,27 @@ export default defineComponent({
 .article-item {
   @include flex-box();
   gap: 32px;
+  cursor: pointer;
 
   &__image {
+    flex-shrink: 0;
     width: 314px;
     height: 314px;
-    overflow: hidden;
     border-radius: 12px;
-    object-fit: cover;
+    overflow: hidden;
 
     img {
-      max-width: 100%;
+      width: 100%;
+      height: 314px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: all 0.3s ease-in-out;
     }
   }
 
   &__content {
+    transition: all 0.3s ease-in-out;
+
     &-category {
       @include sub-heading-text();
     }
@@ -106,6 +113,20 @@ export default defineComponent({
   &__author {
     @include flex-box();
     @include text-style(16px, 700, 18px, $black-1);
+  }
+
+  &:hover {
+    .article-item {
+      &__image {
+        img {
+          transform: scale(1.04);
+        }
+      }
+
+      &__content {
+        transform: translateX(10px);
+      }
+    }
   }
 }
 </style>
