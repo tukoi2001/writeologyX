@@ -1,12 +1,13 @@
 <template>
-  <div class="the-articles">
-    <v-container>
+  <div class="the-articles container-default">
+    <v-container class="pa-0">
       <v-row justify="space-between">
-        <v-col cols="8">
+        <v-col cols="8" class="pa-0 pr-10">
           <LatestArticles />
         </v-col>
-        <v-col cols="4">
+        <v-col cols="4" class="pa-0 pl-10">
           <SearchArticle />
+          <v-divider class="mt-14 mb-14" />
           <CategoryArticles />
           <PopularArticles />
         </v-col>
