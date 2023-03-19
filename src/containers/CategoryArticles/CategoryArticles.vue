@@ -12,18 +12,16 @@
         {{ category.name }}
       </v-btn>
     </div>
-    <v-card class="category-article__card">
-      <v-img
-        class="align-end text-white"
-        height="360"
-        :src="newPost.linkImagePost"
-        cover
-      >
-        <p class="sub-title mb-4">{{ newPost.category }}</p>
-        <p class="title">{{ newPost.title }}s</p>
-      </v-img>
-      <div class="overlay"></div>
-    </v-card>
+    <div class="category-article__post">
+      <div class="category-article__card">
+        <img :src="newPost.linkImagePost" cover />
+        <div class="category-article__card-content">
+          <p class="sub-title mb-4">{{ newPost.category }}</p>
+          <p class="title">{{ newPost.title }}</p>
+        </div>
+        <div class="overlay"></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -66,7 +64,7 @@ export default defineComponent({
 
     const newPost = computed<CategoryArticle>(() => ({
       id: '1',
-      category: 'tips',
+      category: 'resource',
       title: 'How to choose the best management software',
       linkImagePost:
         'https://assets.website-files.com/62abc23e594f83d9d66b136f/62abfe89ab6b229bab1ed420_management-software-featured-blog-writelogy-x-webflow-template.jpg',
@@ -93,9 +91,47 @@ export default defineComponent({
     padding: 12px;
   }
 
+  &__post {
+    &:hover {
+      .category-article__card {
+        transform: scale(0.97);
+      }
+
+      .category-article__card > img {
+        transform: scale(1.12);
+      }
+    }
+  }
+
   &__card {
-    border-radius: 12px;
     position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+
+    & > img {
+      width: 100%;
+      max-height: 360px;
+      object-fit: cover;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 0 24px 48px;
+      z-index: 2;
+
+      .sub-title {
+        @include text-style(18px, 700, 20px, $white);
+        text-transform: uppercase;
+      }
+
+      .title {
+        @include text-style(22px, 700, 28px, $white);
+      }
+    }
   }
 
   .overlay {
@@ -119,8 +155,6 @@ export default defineComponent({
 
 ::v-deep {
   .v-responsive__content {
-    padding: 0 24px 48px;
-
     .sub-title,
     .title {
       padding: 0;
