@@ -1,37 +1,39 @@
 <template>
-  <v-container>
-    <div class="footer flex-column">
-      <div class="footer__top flex-column">
-        <h2 class="footer__top-title mb-4">Subscribe to our newsletter</h2>
-        <span class="footer__top-subtitle mb-5"
-          >Lorem ipsum dolor sit amet consectetur adipiscing elit phasellus amet
-          dui quam vitae quis leo velit aliquam.</span
-        >
-        <div class="footer__top-email mb-10">
-          <v-text-field label="Enter your email address"></v-text-field>
-          <v-btn>Subscribe</v-btn>
-        </div>
-        <div class="footer__top-icons">
-          <a
-            v-for="icon in icons"
-            :key="icon.id"
-            class="footer__top-icon"
-            :href="icon.target"
-            target="_blank"
+  <div class="container-default">
+    <v-container class="pa-0">
+      <div class="footer flex-column">
+        <div class="footer__top flex-column">
+          <h2 class="footer__top-title mb-4">Subscribe to our newsletter</h2>
+          <span class="footer__top-subtitle mb-5"
+            >Lorem ipsum dolor sit amet consectetur adipiscing elit phasellus
+            amet dui quam vitae quis leo velit aliquam.</span
           >
-            <font-icon :name="icon.icon" />
-          </a>
+          <div class="footer__top-email mb-10">
+            <v-text-field label="Enter your email address" hide-details />
+            <v-btn>Subscribe</v-btn>
+          </div>
+          <div class="footer__top-icons">
+            <a
+              v-for="icon in icons"
+              :key="icon.id"
+              class="footer__top-icon"
+              :href="icon.target"
+              target="_blank"
+            >
+              <font-icon :name="icon.icon" />
+            </a>
+          </div>
+        </div>
+        <div class="footer__bottom pt-8 pb-8">
+          <p>
+            Copyright © Writeology X | Designed by
+            <a href="https://brixtemplates.com/">BRIX Templates</a> - Powered by
+            <a href="https://webflow.com/">Webflow</a>
+          </p>
         </div>
       </div>
-      <div class="footer__bottom pt-8 pb-8">
-        <p>
-          Copyright © Writeology X | Designed by
-          <a href="https://brixtemplates.com/">BRIX Templates</a> - Powered by
-          <a href="https://webflow.com/">Webflow</a>
-        </p>
-      </div>
-    </div>
-  </v-container>
+    </v-container>
+  </div>
 </template>
 
 <script lang="ts">
@@ -129,10 +131,6 @@ export default defineComponent({
 
 ::v-deep {
   .footer {
-    .v-input__details {
-      display: none;
-    }
-
     .v-btn.v-btn--density-default {
       --v-btn-height: 56px;
       background: $primary;

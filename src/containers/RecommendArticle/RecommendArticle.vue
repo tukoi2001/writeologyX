@@ -1,11 +1,11 @@
 <template>
-  <div class="recommend-article">
-    <v-container>
-      <v-row align="center">
-        <v-col cols="8">
+  <div class="recommend-article container-default">
+    <v-container class="pa-0">
+      <v-row align="center" class="recommend-article__row">
+        <v-col cols="8" class="pa-0 pr-5">
           <RecommendArticleImage />
         </v-col>
-        <v-col cols="4">
+        <v-col cols="4" class="pa-0 pl-5">
           <div class="recommend-article__relation">
             <div
               v-for="article in articles"
@@ -69,7 +69,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .recommend-article {
-  padding: 60px 0 50px;
+  padding-top: 60px;
+  padding-bottom: 50px;
 
   &__relation {
     &-item {
