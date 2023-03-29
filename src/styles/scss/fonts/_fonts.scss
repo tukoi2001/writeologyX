@@ -1,13 +1,7 @@
 @font-face {
-  font-family: "Outfit";
-  src: url("@/assets/fonts/Outfit-Medium.ttf") format("truetype");
+  font-family: 'Manrope';
+  src: url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap')
+    format('truetype');
   font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "DM Sans";
-  src: url("@/assets/fonts/DMSans-Regular.ttf") format("truetype");
-  font-weight: 400;
   font-style: normal;
 }

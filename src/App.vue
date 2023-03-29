@@ -1,9 +1,5 @@
 <template>
-  <v-app>
-    <v-main>
-      <router-view />
-    </v-main>
-  </v-app>
+  <router-view />
 </template>
 
 <script lang="ts">
@@ -17,4 +13,7 @@ export default defineComponent({
 
 <style lang="scss">
 @import './styles/scss/reset.scss';
+* {
+  font-family: 'Manrope', sans-serif;
+}
 </style>

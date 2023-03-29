@@ -1,23 +1,16 @@
 <template>
-  <div class="home">
-    <p>Hello</p>
-    <v-icon size="20">mdi-chevron-right</v-icon>
-  </div>
+  <HomeContainer />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import HomeContainer from '@/containers/HomeContainer.vue';
+
 export default defineComponent({
   name: 'HomeView',
-  components: {},
+  components: { HomeContainer },
   setup() {},
 });
 </script>
 
-<style lang="scss" scoped>
-.home {
-  p {
-    color: $action-blue;
-  }
-}
-</style>
+<style lang="scss" scoped></style>
